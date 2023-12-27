@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Categories from '../components/categories';
 import axios from 'axios';
+import Recipe from '../components/Recipe';
 
 const HomeScreen = () => {
 
@@ -80,6 +81,11 @@ const HomeScreen = () => {
        {categories.length > 0 &&  <Categories activeCateogry={activeCateogry} 
         setActiveCategory={setActiveCategory}
         categoryData={categories}/>}
+      </View>
+
+      {/* recipes */}
+      <View>
+        <Recipe />
       </View>
 
     </ScrollView>
