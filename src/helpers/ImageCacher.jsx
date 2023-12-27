@@ -6,11 +6,6 @@ const ImageCacher = (props) => {
 
     const [cachedSource, setCachedSource] = useState(null);
     const {uri} = props;
-    if (typeof uri == 'string') {
-        console.log("New ones")    
-    }else{
-        console.log(typeof uri+ " - " + uri + +" "+"\n");
-    }
     
     useEffect(()=>{
         const getCachedImage = async () => {

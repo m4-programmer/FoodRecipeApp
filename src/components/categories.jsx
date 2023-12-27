@@ -1,8 +1,9 @@
-import { View, Text,ScrollView,TouchableOpacity, Image } from 'react-native'
+import { View, Text,ScrollView,TouchableOpacity,  } from 'react-native'
 import React from 'react'
 // import { categoryData } from '../constants'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import ImageCacher from '../helpers/ImageCacher';
 
 const Categories = ({activeCateogry, handleChangeCategory,categoryData}) => {
     
@@ -24,8 +25,8 @@ const Categories = ({activeCateogry, handleChangeCategory,categoryData}) => {
                         onPress={()=>handleChangeCategory(item.strCategory)}
                         >
                             <View className={'rounded-full p-[6px] '+ activeButtonClass}>
-                                <Image 
-                                    source={{uri: item.strCategoryThumb}}
+                                <ImageCacher
+                                    uri={ item.strCategoryThumb}
                                     style={{width: hp(6), height: hp(6)}}
                                     className='rounded-full'
                                 />
