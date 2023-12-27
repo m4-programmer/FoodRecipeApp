@@ -4,6 +4,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import MasonryList from '@react-native-seoul/masonry-list';
 // import { mealData } from '../constants';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import ImageCacher from '../helpers/ImageCacher';
 
 const Recipe = ({categoryData, mealData}) => {
     
@@ -42,8 +43,8 @@ const RecipeCard = ({item, index}) => {
                 style={{width: '100%', paddingLeft: isEven ? 0:8, paddingRight: isEven ? 8: 0}}
                 className='flex justify-center mb-4 space-y-1'
             >
-                <Image 
-                    source={{uri: item.strMealThumb}}
+                <ImageCacher
+                    uri={item.strMealThumb}
                     style={{width: '100%', height: index%3== 0 ? hp(25) : hp(35), borderRadius: 35}}
                     className='bg-black/5'
                 />
