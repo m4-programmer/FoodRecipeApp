@@ -9,14 +9,23 @@ import Recipe from '../components/Recipe';
 
 const HomeScreen = () => {
 
-  const [activeCateogry, setActiveCategory] = useState('Beef')
+  const [activeCategory, setActiveCategory] = useState('Beef')
 
   //method to get data from api
   const [categories, setCategories] = useState([])
+  const [recipe, setRecipe] = useState([])
   useEffect(()=>{
     getCategories()
-
+    getRecipes(activeCategory)
   },[])
+
+  //function to handle when a new category is selected
+  const handleChangeCategory = category => {
+    getRecipes(category)
+    setActiveCategory(category)
+    setRecipe([]);
+  }
+
   const getCategories = async () =>{
     try {
       const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
@@ -24,6 +33,19 @@ const HomeScreen = () => {
       if (response && response.data) {
         
         setCategories(response.data.categories)
+      }
+    } catch (error) {
+      console.log('error: ', error.message)
+    }
+  }
+  
+  const getRecipes = async (param='beef') =>{
+    try {
+      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${param}`);
+
+      if (response && response.data) {
+        setRecipe(response.data.meals)
+        console.log(recipe.length);
       }
     } catch (error) {
       console.log('error: ', error.message)
@@ -78,14 +100,14 @@ const HomeScreen = () => {
 
       {/* categories */}
       <View>
-       {categories.length > 0 &&  <Categories activeCateogry={activeCateogry} 
-        setActiveCategory={setActiveCategory}
+       {categories.length > 0 &&  <Categories activeCateogry={activeCategory} 
+        handleChangeCategory={handleChangeCategory}
         categoryData={categories}/>}
       </View>
 
       {/* recipes */}
       <View>
-        <Recipe categoryData={categories}/>
+        <Recipe categoryData={categories} mealData={recipe}/>
       </View>
 
     </ScrollView>

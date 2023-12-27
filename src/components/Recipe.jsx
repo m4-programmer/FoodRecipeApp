@@ -2,10 +2,11 @@ import { View, Text, Pressable, Image, ActivityIndicator } from 'react-native'
 import React from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import MasonryList from '@react-native-seoul/masonry-list';
-import { mealData } from '../constants';
+// import { mealData } from '../constants';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
-const Recipe = ({categoryData}) => {
+const Recipe = ({categoryData, mealData}) => {
+    
   return (
     <View className='mx-4 space-y-3 '>
       <Text 
@@ -16,11 +17,11 @@ const Recipe = ({categoryData}) => {
         </Text>
 
         <View>
-        {categoryData.length == 0 ?
-            <ActivityIndicator size={10} color={'grey'} />
+        {categoryData.length == 0 || mealData.length==0 ?
+            <ActivityIndicator size={'large'} color={'grey'} className='mt-4'/>
         : <MasonryList
             data={mealData}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => item.idMeal}
             numColumns={2}
             showsVerticalScrollIndicator={false}
             renderItem={({item,i}) => <RecipeCard item={item} index={i} />}
@@ -42,13 +43,13 @@ const RecipeCard = ({item, index}) => {
                 className='flex justify-center mb-4 space-y-1'
             >
                 <Image 
-                    source={{uri: item.strCategoryThumb}}
+                    source={{uri: item.strMealThumb}}
                     style={{width: '100%', height: index%3== 0 ? hp(25) : hp(35), borderRadius: 35}}
                     className='bg-black/5'
                 />
                 <Text style={{fontSize: hp(1.5)}} className='font-semibold ml-2 text-neutral-600'>
                     {
-                        item.strCategory.length > 20 ? item.strCategory.slice(0,20)+'...': item.strCategory
+                        item.strMeal.length > 20 ? item.strMeal.slice(0,20)+'...': item.strMeal
                     }
                 </Text>
                 
