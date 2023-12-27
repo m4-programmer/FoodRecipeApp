@@ -45,7 +45,7 @@ const HomeScreen = () => {
 
       if (response && response.data) {
         setRecipe(response.data.meals)
-        console.log(recipe.length);
+        
       }
     } catch (error) {
       console.log('error: ', error.message)
