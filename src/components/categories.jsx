@@ -1,11 +1,13 @@
 import { View, Text,ScrollView,TouchableOpacity, Image } from 'react-native'
 import React from 'react'
-import { categoryData } from '../constants'
+// import { categoryData } from '../constants'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
-const Categories = ({activeCateogry, setActiveCategory}) => {
+const Categories = ({activeCateogry, setActiveCategory,categoryData}) => {
+    
   return (
-    <View>
+    <Animated.View entering={FadeInDown.duration(700).springify()} >
         <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -39,7 +41,7 @@ const Categories = ({activeCateogry, setActiveCategory}) => {
 
         </ScrollView>
 
-    </View>
+    </Animated.View>
   )
 }
 
