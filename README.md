@@ -8,3 +8,32 @@ This app help end user to quickly browse through the recipe neeeded to cook thei
 - nativewind
 
   This amongst others were needed in the development of this app
+
+## ScreenShots of App
+- IPhone XR View of the App
+<p align="center">
+  
+  <img src="./AppImages/Ios/IMG_1.png" width="180">
+  <img src="./AppImages/Ios/IMG_2.PNG" width="180">
+  <img src="./AppImages/Ios/IMG_3.png" width="180">
+  <img src="./AppImages/Ios/IMG_4.png" width="180">
+</p>
+
+- Andriod View of the App
+<p align="center">
+  
+<img src="./AppImages/Andriod//IMG_1.jpg" width="180">
+  <img src="./AppImages/Andriod//IMG_2.jpg" width="180">
+  <img src="./AppImages/Andriod//IMG_3.jpg" width="180">
+  <img src="./AppImages/Andriod//IMG_4.jpg" width="180">
+</p>
+
+## How to Run Project
+-  first you will need to have npm installed in your laptop
+- clone this project with the command `git clone https://github.com/m4-programmer/FoodRecipeApp.git`
+- cd to the project `cd FoodRecipeApp`
+- run `npm install` to install the needed dependencies
+- run `expo start`, or `npm start` or
+- run npm i -g ```expo-cli``` and then run `expo-cli run --tunnel` or `npx expo-cli run --tunnel`
+- on your andriod or iphone install expo app
+- test the app and leave me a thumbs up
