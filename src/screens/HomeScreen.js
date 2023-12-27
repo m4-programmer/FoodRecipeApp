@@ -85,7 +85,7 @@ const HomeScreen = () => {
 
       {/* recipes */}
       <View>
-        <Recipe />
+        <Recipe categoryData={categories}/>
       </View>
 
     </ScrollView>
