@@ -12,20 +12,19 @@ This app help end user to quickly browse through the recipe neeeded to cook thei
 ## ScreenShots of App
 - IPhone XR View of the App
 <p align="center">
-  
-  <img src="./AppImages/Ios/IMG_1.png" width="180">
-  <img src="./AppImages/Ios/IMG_2.PNG" width="180">
-  <img src="./AppImages/Ios/IMG_3.png" width="180">
-  <img src="./AppImages/Ios/IMG_4.png" width="180">
+<img src="./AppImages/Ios/IMG_1.png" alt="Welcome Screen" width="180">
+<img src="./AppImages/Ios/IMG_2.PNG" alt="Home Screen" width="180">
+<img src="./AppImages/Ios/IMG_3.png" alt="Recipe Detail Screen 1" width="180">
+<img src="./AppImages/Ios/IMG_4.png" alt="Recipe Detail Screen 2" width="180">
 </p>
 
 - Andriod View of the App
 <p align="center">
-  
-<img src="./AppImages/Andriod//IMG_1.jpg" width="180">
-  <img src="./AppImages/Andriod//IMG_2.jpg" width="180">
-  <img src="./AppImages/Andriod//IMG_3.jpg" width="180">
-  <img src="./AppImages/Andriod//IMG_4.jpg" width="180">
+
+<img src="./AppImages/Andriod//IMG_1.jpg" alt="Welcome Screen" width="180">
+  <img src="./AppImages/Andriod//IMG_2.jpg" alt="Home Screen" width="180">
+  <img src="./AppImages/Andriod//IMG_3.jpg" alt="Recipe Detail Screen 1" width="180">
+  <img src="./AppImages/Andriod//IMG_4.jpg" alt="Recipe Detail Screen 2" width="180">
 </p>
 
 ## How to Run Project
